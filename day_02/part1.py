@@ -1,12 +1,10 @@
-
 lines = open("input").read().splitlines()
 my_dict = dict.fromkeys(['A', 'X'], 1)
 my_dict.update(dict.fromkeys(['B', 'Y'], 2))
 my_dict.update(dict.fromkeys(['C', 'Z'], 3))
-games = [x.split() for x in lines]
 tourney = []
-for game in games:
-	my_list = [my_dict.get(play) for play in game]
+for line in lines:
+	my_list = [my_dict.get(play) for play in line.split()]
 	tourney.append(my_list)
 points = 0
 for game in tourney:
